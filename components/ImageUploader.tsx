@@ -37,7 +37,7 @@ export default function ImageUploader({onImageSelect}: ImageUploaderProps)
             <div className="flex flex-row items-center">
                 <label
                     htmlFor="file-upload"
-                    className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
+                    className="flex active:bg-green-700 items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors"
                 >
                     <UploadCloud className="w-5 h-5 text-gray-500"/>
                     <span className="text-sm text-gray-700">Upload Photo</span>
@@ -51,8 +51,8 @@ export default function ImageUploader({onImageSelect}: ImageUploaderProps)
                 />
             </div>
 
-            <p className="text-gray-600 text-center max-w-md">
-                - Or -
+            <p className="text-gray-500 text-center max-w-md">
+                — Or —
             </p>
 
             {/* URL Input */}
@@ -74,6 +74,7 @@ export default function ImageUploader({onImageSelect}: ImageUploaderProps)
                     Add
                 </button>
             </form>
+            <p className="text-gray-500 text-sm "><strong>NOTE</strong> • Please use a square aspect image.</p>
         </div>
     );
 }
