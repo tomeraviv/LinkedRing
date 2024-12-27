@@ -19,5 +19,5 @@ If this doesn’t get you hired, it’s not the circle’s fault.
 Go forth and flex your circle. ✨  
 
 
-## Creator's Note
-Everything here was AI generated thanks to [Bolt.new](https://bolt.new/)! (_except minor bug fixes to make it work._)
+> ## Creator's Note
+> Tomer: Everything here was AI generated thanks to [Bolt.new](https://bolt.new/)! (_except minor bug fixes to make it work._)
