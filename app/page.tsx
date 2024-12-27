@@ -1,5 +1,5 @@
 import ProfileEditor from '@/components/ProfileEditor';
-
+import { Analytics } from "@vercel/analytics/react"
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
@@ -7,6 +7,7 @@ export default function Home() {
         <div className="p-16">
             (° ͜ʖ °)
         </div>
+        <Analytics />
     </main>
   );
 }
