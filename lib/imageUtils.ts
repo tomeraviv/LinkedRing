@@ -34,8 +34,8 @@ export async function captureAndDownloadImage(
   const scale = rect.width / imageElement.naturalWidth;
 
   // Adjust the image position and size with the scale factor
-  const x = (rect.left - containerRect.left) * (canvas.width / containerRect.width) * scaleFactor;
-  const y = (rect.top - containerRect.top) * (canvas.height / containerRect.height) * scaleFactor;
+  const x = (rect.left - containerRect.left) * (canvas.width / containerRect.width);
+  const y = (rect.top - containerRect.top) * (canvas.height / containerRect.height);
 
   const imgWidth = imageElement.naturalWidth * scale * scaleFactor;
   const imgHeight = imageElement.naturalHeight * scale * scaleFactor;
@@ -61,12 +61,12 @@ export async function captureAndDownloadImage(
   canvas.toBlob((blob) => {
     if (!blob) return;
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'profile-photo.png';
+    const a = document.createElement('img');
+    a.src = url;
+    //a.download = 'profile-photo.png';
     document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    //a.click();
+    //document.body.removeChild(a);
+    //URL.revokeObjectURL(url);
   }, 'image/png');
 }
