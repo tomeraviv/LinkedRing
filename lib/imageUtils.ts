@@ -61,12 +61,12 @@ export async function captureAndDownloadImage(
   canvas.toBlob((blob) => {
     if (!blob) return;
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('img');
-    a.src = url;
-    //a.download = 'profile-photo.png';
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'profile-photo.png';
     document.body.appendChild(a);
-    //a.click();
-    //document.body.removeChild(a);
-    //URL.revokeObjectURL(url);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }, 'image/png');
 }
