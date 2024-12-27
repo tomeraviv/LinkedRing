@@ -13,8 +13,8 @@ export default function SizeSlider({ size, onChange }: SizeSliderProps) {
       <Sliders className="w-4 h-4 text-gray-500" />
       <input
         type="range"
-        min="100"
-        max="200"
+        min="20"
+        max="400"
         value={size}
         onChange={(e) => onChange(Number(e.target.value))}
         className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"

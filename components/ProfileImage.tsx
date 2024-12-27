@@ -32,7 +32,7 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
     const newX = e.clientX - startPos.x;
     const newY = e.clientY - startPos.y;
 
-    const bounds = 150;
+    const bounds = 420;
     setPosition({
       x: Math.max(-bounds, Math.min(bounds, newX)),
       y: Math.max(-bounds, Math.min(bounds, newY))
@@ -67,25 +67,28 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
   }, [imageUrl]);
 
   return (
-    <div className="flex gap-6">
-      <div className="flex flex-col items-center gap-4">
-        <div className="relative w-[300px] h-[300px]">
-          <ImageContainer
-            containerRef={containerRef}
-            imageRef={imageRef}
-            imageUrl={imageUrl}
-            position={position}
-            size={size}
-            isDragging={isDragging}
-            onMouseDown={handleMouseDown}
-          />
+      <div className="gap-6 flex flex-col items-center ">
+        <div className="flex flex-col items-center gap-4">
+          <div className="relative w-[300px] h-[300px]">
+            <ImageContainer
+                containerRef={containerRef}
+                imageRef={imageRef}
+                imageUrl={imageUrl}
+                position={position}
+                size={size}
+                isDragging={isDragging}
+                onMouseDown={handleMouseDown}
+            />
+          </div>
         </div>
-        <SaveButton onClick={handleSave} />
+        <div className="flex flex-col justify-center gap-2">
+          <label className="text-sm font-medium text-gray-700">Image Size</label>
+          <SizeSlider size={size} onChange={setSize}/>
+        </div>
+        <SaveButton onClick={handleSave}/>
+        <p className="text-gray-600 text-center max-w-md">
+          Click and drag to adjust the photo position within the circle.
+        </p>
       </div>
-      <div className="flex flex-col justify-center gap-2">
-        <label className="text-sm font-medium text-gray-700">Image Size</label>
-        <SizeSlider size={size} onChange={setSize} />
-      </div>
-    </div>
   );
 }
