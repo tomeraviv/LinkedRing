@@ -72,7 +72,7 @@ export default function ProfileImage({ imageUrl }: ProfileImageProps) {
           <div className="relative w-[300px] h-[300px]">
             <ImageContainer
                 containerRef={containerRef}
-                imageRef={imageRef}
+                imageRef={imageRef!}
                 imageUrl={imageUrl}
                 position={position}
                 size={size}

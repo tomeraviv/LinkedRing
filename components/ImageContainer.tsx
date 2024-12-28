@@ -1,8 +1,8 @@
 'use client';
 
 interface ImageContainerProps {
-  containerRef: React.RefObject<HTMLDivElement>;
-  imageRef: React.RefObject<HTMLImageElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  imageRef: React.RefObject<HTMLImageElement | null>;
   imageUrl: string;
   position: { x: number; y: number };
   size: number;
